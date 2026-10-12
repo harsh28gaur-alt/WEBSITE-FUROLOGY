@@ -1,0 +1,7 @@
+{
+  "name": "FURology Paw Spa & Retreat",
+  "description": "Area's only green pet grooming & doggie daycare facility with an ocean view at 1905 S Ocean Blvd, Myrtle Beach, SC. Signature Make-o-Fur packages & mobile care.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+

@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --color-electric-lime: #38D430;
+  --color-electric-magenta: #FF1493;
+  --color-electric-dark: #111827;
+  --color-electric-canvas: #F9F9F9;
+  --color-electric-tint: #F4F6F0;
+
+  /* Theme mappings for Neo-Brutalist components */
+  --color-brutal-yellow: #38D430;
+  --color-brutal-orange: #FF1493;
+  --color-brutal-blue: #38D430;
+  --color-brutal-cream: #F4F6F0;
+  --color-brutal-black: #111827;
+  --color-brutal-card: #FFFFFF;
+
+  --font-display: "Anton", sans-serif;
+  --font-condensed: "Anton", sans-serif;
+  --font-sans: "Plus Jakarta Sans", sans-serif;
+
+  --shadow-brutal: 4px 4px 0px #111827;
+  --shadow-brutal-lg: 6px 6px 0px #111827;
+  --shadow-brutal-sm: 2px 2px 0px #111827;
+  --shadow-brutal-inset: inset 2px 2px 0px #111827;
+}
+
+body {
+  background-color: #F9F9F9;
+  color: #111827;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Graph Paper Grid Background */
+.graph-paper-bg {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(17, 24, 39, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(17, 24, 39, 0.04) 1px, transparent 1px);
+}
+
+/* Neo-Brutalist Border & Shadows */
+.b-border {
+  border: 2px solid #111827;
+}
+.b-border-thick {
+  border: 3px solid #111827;
+}
+
+.btn-brutal {
+  border: 2px solid #111827;
+  box-shadow: 3px 3px 0px #111827;
+  transition: all 0.15s ease-in-out;
+}
+.btn-brutal:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0px #111827;
+}
+.btn-brutal:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px #111827;
+}
+
+/* Circular Spinning Badge */
+.spin-badge {
+  animation: spinClockwise 18s linear infinite;
+}
+@keyframes spinClockwise {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* Ticket / Serrated Edge Effect */
+.serrated-card {
+  position: relative;
+  background: #FF1493;
+  border: 2px solid #111827;
+}
+.serrated-card::before, .serrated-card::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 14px;
+  height: 14px;
+  background: #F9F9F9;
+  border-radius: 50%;
+  border: 2px solid #111827;
+}
+.serrated-card::before { left: -8px; }
+.serrated-card::after { right: -8px; }
+
+/* Hide scrollbar for slick mobile horizontal carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Touch Action for mobile slider */
+.touch-pan-x {
+  touch-action: pan-y;
+}
+
+/* Marquee Infinite Track */
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: marqueeScroll 25s linear infinite;
+}
+@keyframes marqueeScroll {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-50%); }
+}
+.marquee-track:hover {
+  animation-play-state: paused;
+}
